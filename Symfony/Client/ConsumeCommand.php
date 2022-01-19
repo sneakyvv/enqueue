@@ -88,7 +88,7 @@ class ConsumeCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output): ?int
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $client = $input->getOption('client');
 
@@ -145,7 +145,7 @@ class ConsumeCommand extends Command
 
         $consumer->consume($this->getRuntimeExtensions($input, $output));
 
-        return null;
+        return 0;
     }
 
     protected function getRuntimeExtensions(InputInterface $input, OutputInterface $output): ExtensionInterface
